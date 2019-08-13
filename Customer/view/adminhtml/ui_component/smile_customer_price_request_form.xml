@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">smile_customer_price_request_form.smile_customer_price_request_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Price Request Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Smile\Customer\Block\Adminhtml\PriceRequest\Edit\SaveButton"/>
+            <button name="delete" class="Smile\Customer\Block\Adminhtml\PriceRequest\Edit\DeleteButton"/>
+            <button name="back" class="Smile\Customer\Block\Adminhtml\PriceRequest\Edit\BackButton"/>
+        </buttons>
+        <namespace>smile_customer_price_request_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>smile_customer_price_request_form.smile_customer_price_request_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="smile_customer_price_request_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="smile_customer/pricerequest/save"/>
+        </settings>
+        <dataProvider class="Smile\Customer\Model\PriceRequest\DataProvider" name="smile_customer_price_request_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">price_request</item>
+                    <item name="sortOrder" xsi:type="string">10</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">name</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="email">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">price_request</item>
+                    <item name="sortOrder" xsi:type="string">30</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">E-mail</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">email</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_sku">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">price_request</item>
+                    <item name="sortOrder" xsi:type="string">40</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Product SKU</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">product_sku</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="comment">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">price_request</item>
+                    <item name="sortOrder" xsi:type="string">50</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
+                    <item name="dataType" xsi:type="string">textarea</item>
+                    <item name="label" xsi:type="string" translate="true">Comment</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">comment</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Smile\Customer\Model\PriceRequest\Source\Status</item>
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">price_request</item>
+                    <item name="sortOrder" xsi:type="string">60</item>
+                    <item name="default" xsi:type="string">1</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="dataScope" xsi:type="string">status</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                </item>
+            </argument>
+        </field>
+        <field name="answer">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">price_request</item>
+                    <item name="sortOrder" xsi:type="string">70</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
+                    <item name="dataType" xsi:type="string">textarea</item>
+                    <item name="label" xsi:type="string" translate="true">Answer</item>
+                    <item name="dataScope" xsi:type="string">answer</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

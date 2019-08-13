@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Customer::customer">
+                    <resource id="Smile_Customer::price_request" title="Price Request" translate="title" sortOrder="10">
+                        <resource id="Smile_Customer::price_request_save" title="Save Price Request" translate="title" sortOrder="10" />
+                        <resource id="Smile_Customer::price_request_delete" title="Delete Price Request" translate="title" sortOrder="20" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
