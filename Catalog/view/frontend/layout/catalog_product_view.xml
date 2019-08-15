@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.price">
+            <referenceBlock name="product.price.final" remove="true"/>
+            <block class="Smile\Catalog\Block\PriceRequest\PriceRequestButton" name="product.price.request" template="Smile_Catalog::product/price_request_button.phtml" before="product.info.stock.sku">
+                <block class="Smile\Catalog\Block\PriceRequest\PriceRequestForm" name="product.price.request.form" template="Smile_Catalog::product/price_request_form.phtml" />
+            </block>
+        </referenceContainer>
+    </body>
+</page>

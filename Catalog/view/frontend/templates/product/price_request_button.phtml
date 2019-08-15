@@ -1,0 +1,12 @@
+
+<button type="submit"
+        title=""
+        class="action primary to cart"
+        id="price-request-button"
+        style="margin-top: 10px"
+        data-mage-init='{"buttonPopup": {}}'>
+    <span><?= $block->getButtonLabel(); ?></span>
+</button>
+<div id="popup-modal-form" style="display:none;">
+    <?php echo $block->getChildHtml('product.price.request.form'); ?>
+</div>
