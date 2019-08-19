@@ -118,13 +118,7 @@ class Save extends Action
             $id = $this->getRequest()->getParam('id');
 
             try {
-                if (!$id) {
-                    $data['id'] = null;
-                    $model = $this->priceRequestFactory->create();
-                } else {
-                    $model = $this->priceRequestRepository->getById($id);
-                }
-
+                $model = $this->priceRequestRepository->getById($id);
                 $model->setData($data);
                 if ($data['answer']) {
                     $senderInfo = [
